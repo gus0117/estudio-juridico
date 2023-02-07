@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+  
+.menu-item {
+  margin: 0 10px;
+  padding: 8px 16px;
+  color: #fff;
+}
+  
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+
+.parallax {
+  /* The image used */
+  /* background-image: url("img_parallax.jpg"); */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/hammer.jpg);
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  background-color: #191f31;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 80vh;
+}
+
+.title-1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+}
+
+.title-2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+}
+
+.description {
+  font-family: 'Lato';
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn-orange {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  background-color: orangered;
+  border-radius: 5px;
+  transition: 0.4s;
+}
+
+.btn-orange:hover{
+  background-color: #fff;
+  color: orangered;
+  transition: 0.4s;
+}
+
+.img-perfil {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.img-perfil img{
+  width: 300px;
+  height: 280px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: orangered;
+  border-width: 5px;
+}
+
+.description-2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: #000;
+  max-width: 600px;
+}
+
+.box-content {
+  display: grid;
+  grid-gap: 10px;
+  max-width: 500px;
+  grid-template-columns: repeat(auto-fit, 140px);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box-item {
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.box-item i, .item-label {
+  display: block;
+  margin-top: 20px;
+}
+
+.item-label {
+  font-family: 'Poppins', sans-serif;
+}
+
+.box-icon {
+  color: orange;
+}
+
+.bg-orange {
+  background-color: rgb(182, 82, 0);
+}
+
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.form-group {
+  padding: 10px 1px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.form-label {
+  color:white
+}
+
+.form-control {
+  padding: 5px 10px;
+  background-color: transparent;
+  color: white;
+  border-style: none none solid none;
+  border-color: white;
+  border-width: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-control::placeholder {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  padding-bottom: 50px;
+  width: 400px;
+}
+
+textarea {
+  resize: none;
+}
+
+.btn-form {
+  width: 100%;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  border-style: none;
+  padding: 5px 0;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.btn-form:hover {
+  background-color: orange;
+  color: #fff;
+  transition: 0.4s;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin: 10px 30px;
+}
+
+.icon {
+  margin-left: 10px;
+}
+
+.footer {
+  display: grid;
+  place-items: center;
+  height: 20vh;
+}
+
+.bg-darkblue {
+  background-color: #191f31;
+}
+
+.description-3 {
+   font-family: 'Poppins', sans-serif;
+   font-size: 15px;
+}
