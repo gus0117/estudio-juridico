@@ -10,6 +10,7 @@
 
 html, body {
   scroll-behavior: smooth;
+  min-height: 100%;
 }
 
 menu {
@@ -53,15 +54,21 @@ header {
   font-family: 'Poppins', sans-serif;
 }
 
-.container {
+.container-grid {
   display: grid;
   place-items: center;
   height: 80vh;
 }
 
+.conteiner {
+  height: 80vh;
+  margin: 20px 5px;
+}
+
 .title-1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Noto sans', sans-serif;
   font-size: 40px;
+  letter-spacing: 2px;
 }
 
 .title-2 {
@@ -79,8 +86,16 @@ header {
   color: #fff;
 }
 
+.text-orange {
+  color: orangered;
+}
+
 .text-center {
   text-align: center;
+}
+
+.mw-450{
+  max-width: 450px;
 }
 
 .btn {
@@ -129,7 +144,7 @@ header {
   display: grid;
   grid-gap: 10px;
   max-width: 500px;
-  grid-template-columns: repeat(auto-fit, 140px);
+  grid-template-columns: repeat(auto-fill, 140px);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -249,4 +264,8 @@ textarea {
 .description-3 {
    font-family: 'Poppins', sans-serif;
    font-size: 15px;
+}
+
+.mt-5 {
+  margin-top: 10px;
 }
