@@ -314,7 +314,9 @@ textarea {
   }
 }
 
-@media(min-width: 1024px){
+
+
+@media(min-width: 600px){
   .container-grid {
     padding-top: 10%;
     padding-bottom: 5%;
