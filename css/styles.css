@@ -163,7 +163,7 @@ header {
 
 .box-content {
   display: grid;
-  place-items: center;
+  justify-content: center;
   gap: 10px;
   max-width: 500px;
   grid-template-columns: repeat(auto-fill, 140px);
