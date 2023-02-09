@@ -5,6 +5,7 @@
   background-color: #191f31;
   color: white;
   font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .sticky {
@@ -16,6 +17,7 @@
 .brand-title {
   font-size: 1.5rem;
   margin: .5rem;
+  display: flex;
 }
 
 .brand-title img {
@@ -64,7 +66,7 @@
   border-radius: 10px
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .toggle-button {
       display: flex;
   }
@@ -94,5 +96,6 @@
 
   .navbar-links.active {
       display: flex;
+      transition: .6s;
   }
 }

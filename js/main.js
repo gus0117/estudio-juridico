@@ -5,7 +5,7 @@ toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
 
-// When the user scrolls the page, execute myFunction
+/* // When the user scrolls the page, execute myFunction
 window.onscroll = function() {myFunction()};
 
 // Get the navbar
@@ -19,6 +19,7 @@ function myFunction() {
       navbar.classList.add("sticky")
     } else {
       navbar.classList.remove("sticky");
+      console.log("Sticky removed")
     }
-  }
+  } */
 

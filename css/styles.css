@@ -58,7 +58,6 @@ header {
   display: grid;
   place-items: center;
   height: 80vh;
-  padding-top: 20%;
 }
 
 .conteiner {
@@ -66,25 +65,42 @@ header {
   margin: 20px 5px;
 }
 
-.py-1 {
+.py-10 {
   padding-top: 10%;
   padding-bottom: 10%;
 }
+
+.py-20 {
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+.pt-20 {
+  padding-top: 20%;
+}
+
+.pb-10 {
+  padding-bottom: 10%;
+}
+
 .title-1 {
   font-family: 'Noto sans', sans-serif;
   font-size: 40px;
   letter-spacing: 2px;
+  padding: 20px 10px;
 }
 
 .title-2 {
   font-family: 'Lato', sans-serif;
   font-size: 30px;
+  padding: 20px 10px;
 }
 
 .description {
   font-family: 'Lato';
   font-size: 25px;
   font-weight: 300;
+  padding: 20px 10px;
 }
 
 .text-white {
@@ -273,4 +289,29 @@ textarea {
 
 .mt-5 {
   margin-top: 10px;
+}
+
+@media(max-width: 600px){
+  .container-grid {
+    padding-top: 20%;
+    padding-bottom: 5%;
+  }
+  .title-1 {
+    font-size: 30px;
+  }
+
+  .title-2 {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+}
+
+@media(min-width: 1024px){
+  .container-grid {
+    padding-top: 10%;
+    padding-bottom: 5%;
+  }
 }
