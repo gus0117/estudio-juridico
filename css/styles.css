@@ -163,14 +163,14 @@ header {
 
 .box-content {
   display: grid;
-  grid-gap: 10px;
+  place-items: center;
+  gap: 10px;
   max-width: 500px;
   grid-template-columns: repeat(auto-fill, 140px);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .box-item {
-  margin: 10px auto;
   padding: 10px;
   font-size: 14px;
   text-align: center;
@@ -275,7 +275,7 @@ textarea {
 .footer {
   display: grid;
   place-items: center;
-  height: 20vh;
+  height: 10vh;
 }
 
 .bg-darkblue {
@@ -296,6 +296,11 @@ textarea {
     padding-top: 20%;
     padding-bottom: 5%;
   }
+
+  .container {
+    padding-top: 20%
+  }
+
   .title-1 {
     font-size: 30px;
   }
