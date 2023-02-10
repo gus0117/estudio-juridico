@@ -193,6 +193,7 @@ header {
 .box-content {
   display: grid;
   justify-content: center;
+  margin: 20px auto;
   gap: 10px;
   max-width: 500px;
   grid-template-columns: repeat(auto-fill, 140px);
