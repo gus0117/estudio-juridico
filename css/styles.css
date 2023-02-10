@@ -303,9 +303,12 @@ textarea {
 }
 
 .footer {
-  display: grid;
-  place-items: center;
-  height: 10vh;
+  display: flex;
+  justify-content: center;
+}
+
+.foot-container {
+  padding: 3%;
 }
 
 .bg-darkblue {
