@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/grid.css">
     <script src="./js/main.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Estudio Juridico</title>
 </head>
 <body>
@@ -180,22 +181,22 @@
                         <form action="" method="post" enctype="text/plain" class="form">
                             <div class="form-group">
                                 <label for="email" class="form-label">Correo electrónico</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="ejemplo@email.com">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="ejemplo@email.com" size="40" required>
                             </div>
                             <div class="form-group">
                                 <label for="name" class="form-label">Nombre Completo</label>
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Ingresa tu nombre y apellido" size="40">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Ingresa tu nombre y apellido" size="40" required>
                             </div>
                             <div class="form-group">
                                 <label for="name" class="form-label">Número telefonico</label>
-                                <input type="number" name="phone" id="phone" class="form-control" placeholder="">
+                                <input type="number" name="phone" id="phone" class="form-control" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="message" class="form-label">Mensaje</label>
-                                <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Escribe tu consulta"></textarea>
+                                <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Escribe tu consulta" required></textarea>
                             </div>
                             <div class="form-button">
-                                <button type="submit" class="btn-form">Enviar</button>
+                                <button id="submit" type="submit" class="btn-form">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -207,9 +208,9 @@
     <footer class="footer bg-darkblue">
         <div class="foot-container">
             <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-6 text-white">
-                    <p class="description-3">Direccion: Calle falsa 123, Cordoba, Argentina</p>
-                    <p class="description-3">Telefono: +54 9 0341-4235 </p>
+                <div class="col-sm-12 col-md-6 col-lg-6 text-white text-center">
+                    <p class="description-3">Dirección: Calle falsa 123, Córdoba, Argentina</p>
+                    <p class="description-3">Teléfono: +54 9 0341-4235 </p>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6">
                     <p class="description-3 text-white text-center">Gustavo Alberto Ordoñez</p>
