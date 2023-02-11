@@ -41,7 +41,7 @@ a {
   /* The image used */
   /* background-image: url("img_parallax.jpg"); */
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url(../img/hammer.jpg);
+    url(../img/hammer.webp);
 
   /* Set a specific height */
   min-height: 500px; 
