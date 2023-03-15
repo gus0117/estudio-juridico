@@ -6,6 +6,7 @@
   color: white;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
 }
 
 .sticky {
@@ -15,13 +16,21 @@
 }
 
 .brand-title {
-  font-size: 1.5rem;
   margin: .5rem;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .brand-title img {
-  width: 40px;
+  width: 30px;
+}
+
+.brand-title span {
+  font-size: 0.8rem;
+  font-family: 'Poppins', sans-serif;
+  /* min-width: 120px; */
 }
 
 .navbar-links menu {
@@ -50,8 +59,8 @@
 
 .toggle-button {
   position: absolute;
-  top: 1.75rem;
-  right: 1rem;
+  top: 1.4rem;
+  right: 1.75rem;
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -66,7 +75,12 @@
   border-radius: 10px
 }
 
-@media (max-width: 550px) {
+.menu-icons {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 780px) {
   .toggle-button {
     display: flex;
   }
@@ -97,5 +111,25 @@
   .navbar-links.active {
       display: flex;
       transition: .6s;
+  }
+}
+
+@media(max-width: 540px) {
+  .brand-title img {
+    width: 20px;
+  }
+
+  .brand-title span {
+    font-size: .7rem;
+    min-width: 60px;
+  }
+
+  .toggle-button {
+    top: 1rem;
+    right: 1.75rem;
+  }
+
+  .navbar-links li a {
+    font-size: 1rem;
   }
 }

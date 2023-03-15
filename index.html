@@ -7,13 +7,24 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/slide.css">
+    <link rel="stylesheet" href="css/fadeEffect.css">
     <script src="./js/main.js" defer></script>
-    <title>Estudio Juridico</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Estudio Jurídico</title>
 </head>
 <body>
+    <!-- Loading -->
+    <div class="loading loading--show">
+        <p class="spinner-text">Cargando...</p>
+        <div class="spinner"></div>
+    </div>  
+    <!-- Lugar donde se cargarán las imágenes de caché -->
+    <div id="preload-images"></div>
     <nav class="navbar sticky">
         <div class="brand-title">
-            <img src="./img/balance.svg" alt="logo nz">
+            <img src="./img/balance.svg" alt="logo">
+            <span>Estudio Jurídico</span>
         </div>
         <div class="toggle-button">
             <span class="bar"></span>
@@ -25,12 +36,35 @@
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#services">Servicios</a></li>
                 <li><a href="#contact">Contacto</a></li>
+                <li>
+                    <div class="menu-icons">
+                        <a href="http://instagram.com" target="_blank">
+                            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <path d="M17.5 6.5h.01"></path>
+                            </svg>
+                        </a>
+                        
+                        <a href="http://wa.me" target="_blank">
+                            <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M19.44 4.552A10.413 10.413 0 0 0 12.044 1.5C6.281 1.5 1.59 6.168 1.588 11.906a10.341 10.341 0 0 0 1.396 5.203L1.5 22.5l5.543-1.447a10.483 10.483 0 0 0 4.997 1.266h.004c5.762 0 10.453-4.669 10.456-10.407a10.32 10.32 0 0 0-3.06-7.36Zm-7.396 16.01h-.004a8.706 8.706 0 0 1-4.423-1.205l-.317-.188-3.29.859.879-3.192-.207-.328a8.6 8.6 0 0 1-1.329-4.602c0-4.768 3.9-8.648 8.694-8.648a8.672 8.672 0 0 1 8.688 8.655c-.002 4.769-3.9 8.65-8.69 8.65Zm4.767-6.477c-.261-.13-1.547-.76-1.785-.847-.238-.086-.414-.13-.588.13-.174.261-.675.845-.827 1.02-.153.176-.305.195-.566.065-.261-.13-1.104-.404-2.102-1.29-.776-.69-1.3-1.541-1.453-1.801-.152-.26-.016-.402.115-.531.117-.117.26-.304.392-.456.13-.152.174-.26.26-.434.087-.173.044-.325-.02-.455-.066-.13-.589-1.41-.806-1.93-.213-.508-.428-.439-.588-.447-.152-.007-.328-.01-.501-.01a.962.962 0 0 0-.697.326c-.24.26-.914.89-.914 2.17 0 1.278.937 2.516 1.067 2.69.129.173 1.842 2.799 4.463 3.925.486.209.984.392 1.49.548.625.198 1.195.17 1.645.103.502-.075 1.546-.63 1.764-1.237.217-.607.217-1.127.152-1.236-.065-.108-.24-.174-.501-.303Z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.facebook.com" target="_blank">
+                            <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M22.5 12.063c0-5.799-4.702-10.5-10.5-10.5s-10.5 4.7-10.5 10.5c0 5.24 3.84 9.584 8.86 10.373v-7.337H7.692v-3.037h2.666V9.75c0-2.63 1.568-4.085 3.966-4.085 1.15 0 2.351.205 2.351.205v2.584h-1.324c-1.304 0-1.712.81-1.712 1.64v1.97h2.912l-.465 3.036H13.64v7.337c5.02-.788 8.859-5.131 8.859-10.373Z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div> 
+                </li>
             </menu>
         </div>
     </nav>
 
     <main class="parallax" id="home">
-        <div class="container-grid">
+        <div class="container-grid tag">
             <div class="border-bottom border-white">
                 <h1 class="title-1 text-white text-center">
                     Estudio Jurídico especializado
@@ -38,22 +72,23 @@
             </div>
             
             <h2 class="title-2 text-white text-center">
-                Accidentes de Tránsito | Divorsios | Despidos
+                Divorsios | Sucesiones | Accidentes de Tránsito
             </h2>
             <p class="description text-white text-center">
-                Si tuviste un accidente de tránsito o laboral, podes reclamar. Nosotros te indicamos como.
+                Si necesitas asesoria legal, contáctate.
             </p>
-            <a href="#contact" class="btn btn-orange">Contactanos</a>
+            <a href="#contact" class="btn btn-orange">Contactar</a>
         </div>
     </main>
 
-    <section id="services">
+    <section id="services" class="bg-white">
         <div class="container">
-            <h2 class="title-1 text-orange text-center underline-orange">Nuestros Servicios</h2>
+            <div class="title-lines-orange">
+                <h1>Servicios</h1>
+            </div>
             <div class="row">
-                
                 <div class="col-sm-12 col-md-5 col-lg-5">
-                    <div class="box-content">
+                    <div class="box-content tag">
                         <div class="box-item">
                             <div class="box-icon">
                                 <svg class="icon-warning" width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -122,32 +157,46 @@
                     </div>
                 </div>
 
-                <div class="col-sm-12 col-md-7 col-lg-7 perfil">
-                    <div class="img-perfil">
-                        <img src="./img/photo-contact.jpg" alt="">
-                    </div>
-                    <p class="description-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sapiente quisquam, hic obcaecati facilis laborum corporis, labore minus eius, voluptas possimus nulla ducimus quasi. Eius mollitia laborum repellat hic non.
-                    </p>
-                    <a href="./files/fake_curriculum.pdf" class="btn btn-orange-border" download="Mi_Curriculum">Descargar Curriculum</a>
+                <div class="col-sm-12 col-md-7 col-lg-7 services">
+                    <p class="description-2">Procurando seriedad cumpliendo la ley. Haciendo valer tus derechos. Asesoramiento en:</p>
+                    <ul class="skills">
+                        <li>Divorsios</li>
+                        <li>Accidentes de tránsito</li>
+                        <li>Previsional</li>
+                        <li>Derecho Penal</li>
+                        <li>Suceciones</li>
+                        <li>Derecho Laboral</li>
+                    </ul>
+                    
                 </div>
             </div>
         </div>
-        
     </section>
 
     <section class="bg-orange" id="contact">
         <div class="container">
-            <h1 class="title-1 text-white text-center underline-white">Contacto</h1>
+            <div class="title-lines-white">
+                <h1>Contacto</h1>
+            </div>
             <div class="row">
-                <div class="col-sm-12 col-md-4 col-lg-4 perfil">
-                    <p class="description text-white text-center">
-                        Puedes ponerte en contacto por nuestras redes sociales.
+                <div class="col-sm-12 col-md-6 col-lg-6 perfil text-white">
+                    <div class="img-perfil fade">
+                        <img src="./img/img-perfil-1.jpg" alt="Foto de perfil">
+                    </div>
+                    <div class="img-perfil fade">
+                        <img src="./img/img-perfil-2.jpg" alt="Foto de perfil">
+                    </div>
+                    <div class="img-perfil fade">
+                        <img src="./img/img-perfil-3.jpg" alt="Foto de perfil">
+                    </div>
+                    <p class="description-2 my-30">
+                        ¡Hola! soy abogada, defensora de los derechos de los animales, especialista en derecho penal.
                     </p>
+                    <a href="./files/fake_curriculum.pdf" class="btn btn-white-border" download="Curriculum-Natali_Gabriela_Zerda">Descargar Curriculum</a>
                     <div class="social-icons">
-                        <div class="icon text-white">
+                        <div class="icon instagram">
                             <a href="http://instagram.com" target="_blank">
-                                <svg width="46" height="46" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                                     <path d="M17.5 6.5h.01"></path>
@@ -155,43 +204,58 @@
                             </a>
                         </div>
 
-                        <div class="icon">
-                            <a href="http://web.whatsapp.com" target="_blank">
-                                <svg width="46" height="46" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <div class="icon whatsapp">
+                            <a href="http://wa.me" target="_blank">
+                                <svg width="46" height="46" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M19.44 4.552A10.413 10.413 0 0 0 12.044 1.5C6.281 1.5 1.59 6.168 1.588 11.906a10.341 10.341 0 0 0 1.396 5.203L1.5 22.5l5.543-1.447a10.483 10.483 0 0 0 4.997 1.266h.004c5.762 0 10.453-4.669 10.456-10.407a10.32 10.32 0 0 0-3.06-7.36Zm-7.396 16.01h-.004a8.706 8.706 0 0 1-4.423-1.205l-.317-.188-3.29.859.879-3.192-.207-.328a8.6 8.6 0 0 1-1.329-4.602c0-4.768 3.9-8.648 8.694-8.648a8.672 8.672 0 0 1 8.688 8.655c-.002 4.769-3.9 8.65-8.69 8.65Zm4.767-6.477c-.261-.13-1.547-.76-1.785-.847-.238-.086-.414-.13-.588.13-.174.261-.675.845-.827 1.02-.153.176-.305.195-.566.065-.261-.13-1.104-.404-2.102-1.29-.776-.69-1.3-1.541-1.453-1.801-.152-.26-.016-.402.115-.531.117-.117.26-.304.392-.456.13-.152.174-.26.26-.434.087-.173.044-.325-.02-.455-.066-.13-.589-1.41-.806-1.93-.213-.508-.428-.439-.588-.447-.152-.007-.328-.01-.501-.01a.962.962 0 0 0-.697.326c-.24.26-.914.89-.914 2.17 0 1.278.937 2.516 1.067 2.69.129.173 1.842 2.799 4.463 3.925.486.209.984.392 1.49.548.625.198 1.195.17 1.645.103.502-.075 1.546-.63 1.764-1.237.217-.607.217-1.127.152-1.236-.065-.108-.24-.174-.501-.303Z" clip-rule="evenodd"></path>
                                 </svg>
                             </a>
                         </div>
 
-                        <div class="icon">
-                            <a href="http://facebook.com" target="_blank">
-                            <svg width="46" height="46" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M22.5 12.063c0-5.799-4.702-10.5-10.5-10.5s-10.5 4.7-10.5 10.5c0 5.24 3.84 9.584 8.86 10.373v-7.337H7.692v-3.037h2.666V9.75c0-2.63 1.568-4.085 3.966-4.085 1.15 0 2.351.205 2.351.205v2.584h-1.324c-1.304 0-1.712.81-1.712 1.64v1.97h2.912l-.465 3.036H13.64v7.337c5.02-.788 8.859-5.131 8.859-10.373Z" clip-rule="evenodd"></path>
-                            </svg>
+                        <div class="icon facebook">
+                            <a href="https://www.facebook.com" target="_blank">
+                                <svg width="46" height="46" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M22.5 12.063c0-5.799-4.702-10.5-10.5-10.5s-10.5 4.7-10.5 10.5c0 5.24 3.84 9.584 8.86 10.373v-7.337H7.692v-3.037h2.666V9.75c0-2.63 1.568-4.085 3.966-4.085 1.15 0 2.351.205 2.351.205v2.584h-1.324c-1.304 0-1.712.81-1.712 1.64v1.97h2.912l-.465 3.036H13.64v7.337c5.02-.788 8.859-5.131 8.859-10.373Z" clip-rule="evenodd"></path>
+                                </svg>
                             </a>
                         </div>
                     </div>
-                    <p class="description text-white text-center">
-                        Enviame un correo electronico a:
-                    </p>
-                    <p class="description-3 text-center text-white">
-                        unmail@ejemplo.com
-                    </p>
+                    <div class="text-white">
+                        <div class="contact-data">
+                            <svg width="25" height="25" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2Z"></path>
+                                <path d="m3 8 7.89 5.26a2 2 0 0 0 2.22 0L21 8"></path>
+                            </svg>
+                            <p class="description-2">
+                                email@mail.com
+                            </p>
+                        </div>
+                        
+                        <div class="contact-data">
+                            <svg width="25" height="25" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.586 3.586A2 2 0 0 0 3 5v1c0 8.284 6.716 15 15 15h1a2 2 0 0 0 2-2v-3.279a1 1 0 0 0-.684-.949l-4.493-1.498a1 1 0 0 0-1.21.502l-1.13 2.257a11.042 11.042 0 0 1-5.516-5.516l2.257-1.13a1 1 0 0 0 .502-1.21L9.228 3.684A1 1 0 0 0 8.28 3H5a2 2 0 0 0-1.414.586Z"></path>
+                            </svg>
+                            <p class="description-2">
+                                +54 9 2341 25-4241
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-12 col-md-8 col-lg-8">
-                    <div class="contact-form">
-                        <form action="" method="post" enctype="text/plain" class="form">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <p class="description-2 text-white text-center my-30">Escribe tu consulta por aquí.</p>
+                    <div class="contact-form tag">
+                        <form action="" method="post" class="form">
                             <div class="form-group">
                                 <label for="email" class="form-label">Correo electrónico</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="ejemplo@email.com" size="40" required>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="ejemplo@email.com" maxlength="50" required>
                             </div>
                             <div class="form-group">
                                 <label for="name" class="form-label">Nombre Completo</label>
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Ingresa tu nombre y apellido" size="40" required>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Ingresa tu nombre y apellido" maxlength="50" required>
                             </div>
                             <div class="form-group">
-                                <label for="name" class="form-label">Número telefonico</label>
-                                <input type="number" name="phone" id="phone" class="form-control" placeholder="" required>
+                                <label for="name" class="form-label">Número telefónico</label>
+                                <input type="number" name="phone" id="phone" class="form-control" placeholder="ej. 3537556666" maxlength="10" min="111111111" max="9999999999" required>
                             </div>
                             <div class="form-group">
                                 <label for="message" class="form-label">Mensaje</label>
@@ -200,6 +264,8 @@
                             <div class="form-button">
                                 <button id="submit" type="submit" class="btn-form">Enviar</button>
                             </div>
+
+                            <input type="hidden" name="_next" value="">
                         </form>
                     </div>
                 </div>
@@ -211,11 +277,11 @@
         <div class="foot-container">
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-6 text-white text-center">
-                    <p class="description-3">Dirección: Calle falsa 123, Córdoba, Argentina</p>
-                    <p class="description-3">Teléfono: +54 9 0341-4235 </p>
+                    <p class="description-3">Dirección: Corrientes n° 1024, San Salvador de Jujuy, Jujuy, Argentina</p>
+                    <p class="description-3">Teléfono: +54 9 2341 25-4241</p>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6">
-                    <p class="description-3 text-white text-center">Gustavo Alberto Ordoñez</p>
+                    <p class="description-3 text-white text-center">Estudio Jurídico Especializado</p>
 
                     <div class="social-icons">
                         <div class="icon text-white">
@@ -229,7 +295,7 @@
                         </div>
         
                         <div class="icon">
-                            <a href="http://web.whatsapp.com" target="_blank">
+                            <a href="http://wa.me" target="_blank">
                                 <svg width="25" height="25" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M19.44 4.552A10.413 10.413 0 0 0 12.044 1.5C6.281 1.5 1.59 6.168 1.588 11.906a10.341 10.341 0 0 0 1.396 5.203L1.5 22.5l5.543-1.447a10.483 10.483 0 0 0 4.997 1.266h.004c5.762 0 10.453-4.669 10.456-10.407a10.32 10.32 0 0 0-3.06-7.36Zm-7.396 16.01h-.004a8.706 8.706 0 0 1-4.423-1.205l-.317-.188-3.29.859.879-3.192-.207-.328a8.6 8.6 0 0 1-1.329-4.602c0-4.768 3.9-8.648 8.694-8.648a8.672 8.672 0 0 1 8.688 8.655c-.002 4.769-3.9 8.65-8.69 8.65Zm4.767-6.477c-.261-.13-1.547-.76-1.785-.847-.238-.086-.414-.13-.588.13-.174.261-.675.845-.827 1.02-.153.176-.305.195-.566.065-.261-.13-1.104-.404-2.102-1.29-.776-.69-1.3-1.541-1.453-1.801-.152-.26-.016-.402.115-.531.117-.117.26-.304.392-.456.13-.152.174-.26.26-.434.087-.173.044-.325-.02-.455-.066-.13-.589-1.41-.806-1.93-.213-.508-.428-.439-.588-.447-.152-.007-.328-.01-.501-.01a.962.962 0 0 0-.697.326c-.24.26-.914.89-.914 2.17 0 1.278.937 2.516 1.067 2.69.129.173 1.842 2.799 4.463 3.925.486.209.984.392 1.49.548.625.198 1.195.17 1.645.103.502-.075 1.546-.63 1.764-1.237.217-.607.217-1.127.152-1.236-.065-.108-.24-.174-.501-.303Z" clip-rule="evenodd"></path>
                                 </svg>
@@ -237,7 +303,7 @@
                         </div>
         
                         <div class="icon">
-                            <a href="http://facebook.com" target="_blank">
+                            <a href="https://www.facebook.com" target="_blank">
                             <svg width="25" height="25" fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M22.5 12.063c0-5.799-4.702-10.5-10.5-10.5s-10.5 4.7-10.5 10.5c0 5.24 3.84 9.584 8.86 10.373v-7.337H7.692v-3.037h2.666V9.75c0-2.63 1.568-4.085 3.966-4.085 1.15 0 2.351.205 2.351.205v2.584h-1.324c-1.304 0-1.712.81-1.712 1.64v1.97h2.912l-.465 3.036H13.64v7.337c5.02-.788 8.859-5.131 8.859-10.373Z" clip-rule="evenodd"></path>
                             </svg>
@@ -246,9 +312,11 @@
                     </div>
                 </div>
             </div>
-            <p class="description-3 text-white text-center">Todos los derechos reservados 2023.</p>
+            <p class="description-3 text-white text-center">Todos los derechos reservados <span id="year">2023</span>.</p>
         </div>
         
     </footer>
+    <script src="./js/fadeEffect.js"></script>
+    <script src="./js/slide.js"></script>
 </body>
 </html>
